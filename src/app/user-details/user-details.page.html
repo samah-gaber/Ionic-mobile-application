@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar color='danger'>
+      <ion-grid>
+        <ion-row>
+          <ion-col size='11'>
+            <ion-title>User details</ion-title>
+          </ion-col>
+          <ion-col size='1'>
+              <ion-icon name='close-circle' class="ion-margin-end" (click)='closeModal()'></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size='3'>
+            <ion-img [src]='[userDetails.profileImg]'></ion-img>
+          </ion-col>
+          <ion-col size='9'>
+            {{ userDetails.firstname }}
+            {{ userDetails.lastname }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <hr>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size='12'>
+            <p>Track: {{ userDetails.track }}</p> 
+          </ion-col>
+          <ion-col size='12'>
+            <p>Email: {{ userDetails.email }}</p> 
+          </ion-col>
+          <ion-col size='12'>
+            <p>dateOfBirth: {{ userDetails.dateOfBirth }}</p> 
+          </ion-col>
+          <ion-col size='12'>
+            <p>gender: {{ userDetails.gender }}</p> 
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

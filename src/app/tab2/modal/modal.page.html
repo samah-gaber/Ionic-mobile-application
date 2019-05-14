@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color='danger'>
+    <ion-grid>
+      <ion-row>
+        <ion-col size='11'>
+          <ion-title>Add {{ usersPageTitle }}</ion-title>
+        </ion-col>
+        <ion-col size='1'>
+            <ion-icon name='close-circle' class="ion-margin-end" (click)='closeModal()'></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center ion-padding">
+          <form (ngSubmit)="addUser()" #newUserForm="ngForm">
+            <ion-item>
+              <ion-label position="floating">First Name</ion-label>
+              <ion-input type="text" [(ngModel)]="modalUser.firstname" name='firstname'></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Last Name</ion-label>
+              <ion-input type="text" [(ngModel)]="modalUser.lastname" name='lastname'></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" [(ngModel)]="modalUser.email" name='email'></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Date of birth</ion-label>
+              <ion-input type="text" [(ngModel)]="modalUser.dateOfBirth" name='dateOfBirth'></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Gender</ion-label>
+              <ion-select [(ngModel)]="modalUser.gender" name='gender'>
+                <ion-select-option value="f" selected="true">Female</ion-select-option>
+                <ion-select-option value="m">Male</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Track</ion-label>
+              <ion-select [(ngModel)]="modalUser.track" name='track'>
+                <ion-select-option value="ui" selected="true">UI</ion-select-option>
+                <ion-select-option value="os">OS</ion-select-option>
+                <ion-select-option value="sd">SD</ion-select-option>
+                <ion-select-option value="sa">SA</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-button fill='outline' color="danger" (click)='addImage()'>Add image</ion-button>
+            <ion-button color="danger" (click)='sendData()'>Add {{ usersPageTitle }}</ion-button>
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
